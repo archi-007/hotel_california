@@ -11,6 +11,7 @@ class Book_a_room(models.Model):
     checkout = models.DateField(null = False, blank = False)
     adult = models.IntegerField(null = False, blank = False)
     children = models.IntegerField(null = True, blank = True)
+    room = models.IntegerField(default = 0)
     
 
     def __str__(self):
@@ -29,4 +30,3 @@ class Book_a_table(models.Model):
     def __str__(self):
         return self.name
 
-        
