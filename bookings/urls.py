@@ -7,5 +7,7 @@ urlpatterns = [
 
     
     path('room_book/', views.bookaroom, name='bookaroom'),
+    path('booking_successful/', views.successbook, name='successbook'),
+    
     
     ]

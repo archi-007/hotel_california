@@ -6,6 +6,12 @@
 
 <h1>welcome to the booking section</h1><br>
 
+<form method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+
+</form><br>
 
 <a href="{% url 'pay' %}">proceed to payment</a><br>
 
