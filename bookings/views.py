@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
 
-from .forms import Room_book
+from .forms import Room_book, Table_book
 
 # Create your views here.
 
@@ -28,5 +28,23 @@ def bookaroom(request):
 
 
     return render(request, 'room_book.html', {'form' : form})
+
+
+
+
+
+@login_required
+def bookatable(request):
+    context = {}
+    form = Table_book()
+    if (request.method == "POST"):
+        form = Table_book(request.POST)
+        
+        if (form.is_valid()):
+            form.save()
+            return redirect('/booking_successful')
+
+
+    return render(request, 'bookfood.html', {'form' : form})
 
 

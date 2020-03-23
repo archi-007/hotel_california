@@ -15,3 +15,18 @@ class Book_a_room(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Book_a_table(models.Model):
+
+    name = models.CharField(max_length = 200)
+    table = models.IntegerField()
+    time = models.TimeField(null = False, blank = False)
+
+
+
+    def __str__(self):
+        return self.name
+
+        

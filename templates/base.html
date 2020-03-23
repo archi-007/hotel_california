@@ -11,6 +11,7 @@
     {% if user.is_authenticated %}
         <a href="{% url 'review' %}">write a review</a><br>
         <a href="{% url 'bookaroom' %}">Book a room</a><br>
+        <a href="{% url 'bookatable' %}">Dining & bars</a><br>
         <a href="{% url 'password_change' %}">change your password</a><br>
         <a href="{% url 'logout' %}">log out</a><br>
     {% else %}
