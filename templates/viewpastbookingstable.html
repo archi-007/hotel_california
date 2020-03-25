@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+
+<h1>your previous bookings</h1><br>
+
+
+
+{% for book in booktable %}
+
+    {% ifequal user.username book.name %}
+
+        <ul>
+            
+            <li>{{book.purpose}}</li>
+            <li>{{book.name}}</li>
+            <li>{{book.table}}</li>
+            <li>{{book.time}}</li>
+            
+            
+        </ul>
+    {% endifequal %}
+{% endfor %}
+
+{% endblock %}
