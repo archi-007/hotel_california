@@ -8,6 +8,7 @@ urlpatterns = [
     
     path('room_book/', views.bookaroom, name='bookaroom'),
     path('booking_successful/', views.successbook, name='successbook'),
-    path('bookfood/', views.bookatable, name = 'bookatable')
+    path('bookfood/', views.bookatable, name = 'bookatable'),
+    
     
     ]

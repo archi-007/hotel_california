@@ -7,5 +7,6 @@ urlpatterns = [
 
     
     path('review/', views.review, name='review'),
+    path('write_review/',views.writereview, name = 'writereview'),
     
     ]

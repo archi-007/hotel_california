@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+
+<h1>your previous bookings</h1><br>
+
+
+
+{% for book in bookings %}
+
+
+    <ul>
+        
+        <li>{{book.purpose}}</li>
+        <li>{{book.name}}</li>
+        <li>{{book.checkin}}</li>
+        <li>{{book.checkout}}</li>
+        <li>{{book.adult}}</li>
+        <li>{{book.children}}</li>
+        <li>{{book.room}}</li>
+        
+    </ul>
+
+
+
+{% endblock %}

@@ -1,11 +1,15 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
-# Create your models here.
 
 
+# bookroom = Book_a_room()
 class Book_a_room(models.Model):
 
+
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    purpose = models.CharField(max_length = 50, default = "")
     name = models.CharField(max_length = 200)
     checkin = models.DateField(null = False, blank = False)
     checkout = models.DateField(null = False, blank = False)
@@ -18,9 +22,12 @@ class Book_a_room(models.Model):
         return self.name
 
 
-
+# booktable = Book_a_table()
 class Book_a_table(models.Model):
 
+
+    user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
+    purpose = models.CharField(max_length = 50, default = "")
     name = models.CharField(max_length = 200)
     table = models.IntegerField()
     time = models.TimeField(null = False, blank = False)

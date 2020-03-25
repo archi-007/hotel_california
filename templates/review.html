@@ -7,5 +7,12 @@
 <h1>see what others have to say</h1>
 
 
+{% for review in allreviews %}
+
+
+    <p>{{ review.body }} - {{user.username}}</p>
+    <hr>
+
+{% endfor %}
 
 {% endblock %}
