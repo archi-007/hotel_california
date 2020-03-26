@@ -4,9 +4,10 @@
 
 {% block content %}
 
-<h1>your booking is done </h1>
 
 
+<strong>pay Rs.{{ bill_amt }} to confirm booking</strong><br>
 
+<a href="{% url 'pay' %}">Pay now</a><br>
 
 {% endblock %}

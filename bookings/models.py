@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 
-# bookroom = Book_a_room()
+
 class Book_a_room(models.Model):
 
 
@@ -30,7 +30,7 @@ class Book_a_room(models.Model):
         return self.name
 
 
-# booktable = Book_a_table()
+
 class Book_a_table(models.Model):
 
 

@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from .models import Book_a_room, Book_a_table
 from .forms import Room_book, Table_book
 
+
+
 # Create your views here.
 
 @login_required
@@ -38,9 +40,20 @@ def viewtablebooking(request):
 @login_required
 def bookaroom(request):
 
+    bill_amt = 0.0
+
+    price = {
+        'Superior room' : 6000,
+        'Premier room' : 7000,
+        'Deluxe Suite' : 8500,
+        'Presidential Suite' : 10000,
+    }
     
+    room = ""
+    room_price = 0
 
     context = {}
+
     form = Room_book()
     if (request.method == "POST"):
         form = Room_book(request.POST)
@@ -49,7 +62,18 @@ def bookaroom(request):
             book = form.save(commit=False)
             book.user = request.user
             book.save()
-            return redirect('/booking_successful')
+
+            room = book.roomtype
+            
+            room_price = price.get(room)
+
+            bill_amt = room_price*(book.room)
+
+            context = {
+                'bill_amt' : bill_amt
+            }
+
+            return render(request, 'booking_successful.html', context)
 
 
     return render(request, 'room_book.html', {'form' : form})
