@@ -8,7 +8,7 @@ class Reviewform(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ('body',)
+        fields = ('body','name')
 
 
 

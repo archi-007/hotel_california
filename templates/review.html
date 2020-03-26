@@ -10,7 +10,7 @@
 {% for review in allreviews %}
 
 
-    <p>{{ review.body }} - {{user.username}}</p>
+    <p>{{ review.body }} - {{ review.name }}</p>
     <hr>
 
 {% endfor %}
