@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+
+<h1>our tariff chart</h1><br>
+
+
+
+{% for room in allrooms %}
+
+    <strong>{{ room.room_type }}</strong>
+
+        <ul>
+            
+            
+            
+            <li>{{room.room_desc}}</li>
+            <li>Rs. {{room.room_price}}</li>
+            
+        </ul>
+        <hr>
+{% endfor %}
+
+{% endblock %}

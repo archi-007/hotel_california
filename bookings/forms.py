@@ -8,7 +8,7 @@ class Room_book(forms.ModelForm):
 
     class Meta:
         model = Book_a_room
-        fields = ('purpose', 'name', 'checkin', 'checkout', 'adult', 'children', 'room')
+        fields = ('purpose', 'name', 'checkin', 'checkout', 'adult', 'children', 'room', 'roomtype')
 
 
 

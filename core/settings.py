@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'bookings.apps.BookingsConfig',
     'review.apps.ReviewConfig',
     'payments.apps.PaymentsConfig',
+    'tariff.apps.TariffConfig',
+    
 ]
 
 MIDDLEWARE = [

@@ -16,7 +16,15 @@ class Book_a_room(models.Model):
     adult = models.IntegerField(null = False, blank = False)
     children = models.IntegerField(null = True, blank = True)
     room = models.IntegerField(default = 0)
-    
+    room_choice = (
+        ('Superior room', 'Superior room'),
+        ('Premier room', 'Premier room'),
+        ('Deluxe Suite', 'Deluxe Suite'),
+        ('Presidential Suite', 'Presidential Suite'),
+
+    )
+
+    roomtype = models.CharField(max_length = 30, blank = True, null = True, choices = room_choice)
 
     def __str__(self):
         return self.name
