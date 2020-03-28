@@ -105,7 +105,7 @@ def bookatable(request):
             book = form.save(commit=False)
             book.user = request.user
             book.save()
-            return redirect('/booking_successful')
+            return render(request, 'booking_successful_table.html')
 
 
     return render(request, 'bookfood.html', {'form' : form})
