@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'bookings.apps.BookingsConfig',
     'review.apps.ReviewConfig',
-    'payments.apps.PaymentsConfig',
+    
     'tariff.apps.TariffConfig',
     
 ]
@@ -134,3 +134,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+STRIPE_SECRET_KEY = 'sk_test_Vh352tYZVSCm7AMwivWRRd4C00kPziXwqG'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_x6hkRhgbKMBwNArbHviWZhH900bXUanVHf'

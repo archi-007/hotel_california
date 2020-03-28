@@ -11,5 +11,6 @@ urlpatterns = [
     path('bookfood/', views.bookatable, name = 'bookatable'),
     path('pastbookingsroom/', views.viewroombooking, name = 'userroombook'),
     path('pastbookingstable/', views.viewtablebooking, name = 'usertablebook'),
-    
+    path('charge/', views.charge, name='charge'),
+
     ]

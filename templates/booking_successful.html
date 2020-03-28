@@ -8,6 +8,13 @@
 
 <strong>pay Rs.{{ bill_amt }} to confirm booking</strong><br>
 
-<a href="{% url 'pay' %}">Pay now</a><br>
 
+<form action="{% url 'charge' %}" method="post">
+    {% csrf_token %}
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key= {{ key }}
+            data-description="Hotel Registrstion"
+            data-amount={{ bill_amt }}
+            data-locale="auto"></script>
+  </form>
 {% endblock %}

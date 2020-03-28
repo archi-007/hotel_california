@@ -1,3 +1,8 @@
+
+
+import stripe
+
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -7,9 +12,13 @@ from django.http import HttpResponseRedirect
 from .models import Book_a_room, Book_a_table
 from .forms import Room_book, Table_book
 
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
+bill_amt = 0.0
 
 # Create your views here.
+
+
 
 @login_required
 def successbook(request):
@@ -40,7 +49,10 @@ def viewtablebooking(request):
 @login_required
 def bookaroom(request):
 
-    bill_amt = 0.0
+    context = {}
+    context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+
+    
 
     price = {
         'Superior room' : 6000,
@@ -52,7 +64,7 @@ def bookaroom(request):
     room = ""
     room_price = 0
 
-    context = {}
+    
 
     form = Room_book()
     if (request.method == "POST"):
@@ -98,4 +110,18 @@ def bookatable(request):
 
     return render(request, 'bookfood.html', {'form' : form})
 
+@login_required
+def charge(request): 
 
+    
+   
+
+
+    if request.method == 'POST':
+        charge = stripe.Charge.create(
+            amount= bill_amt,
+            currency='inr',
+            description='A Django charge',
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'charge.html')
