@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'review.apps.ReviewConfig',
     
     'tariff.apps.TariffConfig',
+
+    'crispy_forms',
     
 ]
 
@@ -138,3 +140,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 STRIPE_SECRET_KEY = 'ENTER YOUR KEY'
 STRIPE_PUBLISHABLE_KEY = 'ENTER YOUR KEY'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
