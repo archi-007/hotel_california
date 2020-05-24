@@ -17,3 +17,5 @@ def tariff(request):
     
     return render(request, 'tariff.html', context)
 
+def tarifffood(request):
+    return render(request, 'tarifffood.html')
